@@ -7,7 +7,7 @@
     tags:
       - MagazineDP29
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRifle
+    proto: Cartridge7.62x54mmRFMJ
     capacity: 48
   - type: Sprite
     sprite: _Mono/Objects/Weapons/Guns/Ammunition/Magazine/dp29.rsi
