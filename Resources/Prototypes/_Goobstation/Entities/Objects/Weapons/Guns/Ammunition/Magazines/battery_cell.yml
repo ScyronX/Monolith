@@ -12,7 +12,6 @@
   - type: Battery
     pricePerJoule: 0.15
   - type: PowerCell
-    powerCellVisualsLevels: 4
   - type: Explosive
     explosionType: Default
     maxIntensity: 200
@@ -28,6 +27,7 @@
   - type: DrawableSolution
     solution: battery
   - type: Appearance
+  - type: PowerCellVisuals
   - type: Riggable
   - type: HitscanBatteryAmmoProvider
     proto: SmallRedLaser
