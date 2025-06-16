@@ -1,13 +1,13 @@
 - type: entity
   id: MagazineDP29
-  name: "DP-29 magazine (7.62x54mmR)"
-  parent: BaseMagazine7.62x54mmR
+  name: "DP-29 magazine (7.62x39mm)"
+  parent: BaseMagazine7.62x39mm
   components:
   - type: Tag
     tags:
       - MagazineDP29
   - type: BallisticAmmoProvider
-    proto: Cartridge7.62x54mmRFMJ
+    proto: Cartridge7.62x39mmFMJ
     capacity: 48
   - type: Sprite
     sprite: _Mono/Objects/Weapons/Guns/Ammunition/Magazine/dp29.rsi
