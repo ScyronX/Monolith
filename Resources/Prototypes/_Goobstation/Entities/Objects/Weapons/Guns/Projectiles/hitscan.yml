@@ -46,7 +46,6 @@
 
 - type: hitscan
   id: SmallOverchargedLaser
-  fireStacks: 0.4
   damage:
     types:
       Heat: 10
@@ -123,7 +122,6 @@
 
 - type: hitscan
   id: MediumOverchargedLaser
-  fireStacks: 0.7
   damage:
     types:
       Heat: 14

@@ -75,7 +75,6 @@
     shotsPerBurst: 3
     burstCooldown: 0.8
     fireRate: 0.8
-    lockOnTargetBurst: true
     selectedMode: Burst
     availableModes:
     - Burst
@@ -177,7 +176,6 @@
     - suitStorage
     - belt
   - type: ItemToggle
-    wieldToggle: false
     soundActivate: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     soundDeactivate: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
   - type: MagazineVisuals

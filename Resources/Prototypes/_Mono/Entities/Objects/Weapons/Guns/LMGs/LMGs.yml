@@ -56,7 +56,6 @@
   - type: Appearance
   - type: Clothing
     sprite: _Mono/Objects/Weapons/Guns/LMGs/dp29.rsi
-    scale: 0.1, 0.1
   - type: StaticPrice
     price: 1750
     vendPrice: 50000
