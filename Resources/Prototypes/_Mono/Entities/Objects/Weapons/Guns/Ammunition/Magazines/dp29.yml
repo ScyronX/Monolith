@@ -1,7 +1,7 @@
 - type: entity
   id: MagazineDP29
-  name: "DP-29 magazine (.30 rifle)"
-  parent: BaseMagazineLightRifle
+  name: "DP-29 magazine (7.62x54mmR)"
+  parent: BaseMagazine7.62x54mmR
   components:
   - type: Tag
     tags:

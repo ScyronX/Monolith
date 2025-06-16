@@ -18,7 +18,6 @@
   - RogueRifleSmgMagLoadout
   - RoguePistolSubMachineGunTopMounted
   - RogueRifleMagLoadout
-  - RoguePistolMagLoadout
   - RogueLightRifleMagLoadout
   fallbacks:
   - RogueRifleSmgMagLoadout

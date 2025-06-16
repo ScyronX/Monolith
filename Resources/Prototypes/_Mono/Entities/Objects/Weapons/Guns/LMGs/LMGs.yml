@@ -40,7 +40,7 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeLightRifle
+        startingItem: Cartridge7.62x54mmRFMJ
         priority: 1
         whitelist:
           tags:

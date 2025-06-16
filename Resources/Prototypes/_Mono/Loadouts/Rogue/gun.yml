@@ -35,32 +35,25 @@
   price: 0
   storage:
     back:
-    - BoxMagazinePistolSubMachineGun
+    - BoxMagazine9x19mmSubMachineGunFMJ
 
 - type: loadout
   id: RoguePistolSubMachineGunTopMounted
   price: 0
   storage:
     back:
-    - BoxMagazinePistolSubMachineGunTopMounted
+    - BoxMagazine4.6x30mmSubMachineGunTopMountedFMJ
 
 - type: loadout
   id: RogueRifleMagLoadout
   price: 0
   storage:
     back:
-    - BoxMagazineRifle
-
-- type: loadout
-  id: RoguePistolMagLoadout
-  price: 0
-  storage:
-    back:
-    - BoxMagazinePistol
+    - BoxMagazine5.56x45mmFMJ
 
 - type: loadout
   id: RogueLightRifleMagLoadout
   price: 50
   storage:
     back:
-    - BoxMagazineLightRifle
+    - BoxMagazine7.62x51mmFMJ
