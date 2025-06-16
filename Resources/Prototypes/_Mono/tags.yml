@@ -1,2 +1,8 @@
 - type: Tag
   id: CassetteTape
+
+- type: Tag
+  id: MilitaryPowerCellMG
+
+- type: Tag
+  id: MagazineDP29

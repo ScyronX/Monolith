@@ -1,0 +1,66 @@
+# the GUNS
+
+- type: loadout
+  id: RogueC20RLoadout
+  price: 0
+  storage:
+    back:
+    - WeaponSubMachineGunC20r
+
+- type: loadout
+  id: RogueWt550Loadout
+  price: 0
+  storage:
+    back:
+    - WeaponSubMachineGunWt550
+
+- type: loadout
+  id: RogueLecterLoadout
+  price: 2000
+  storage:
+    back:
+    - WeaponRifleLecter
+
+- type: loadout
+  id: RogueEnergyGunLoadout
+  price: 0
+  storage:
+    back:
+    - WeaponEnergyGun
+
+# the BULLETS
+
+- type: loadout
+  id: RogueRifleSmgMagLoadout
+  price: 0
+  storage:
+    back:
+    - BoxMagazinePistolSubMachineGun
+
+- type: loadout
+  id: RoguePistolSubMachineGunTopMounted
+  price: 0
+  storage:
+    back:
+    - BoxMagazinePistolSubMachineGunTopMounted
+
+- type: loadout
+  id: RogueRifleMagLoadout
+  price: 0
+  storage:
+    back:
+    - BoxMagazineRifle
+
+- type: loadout
+  id: RoguePistolMagLoadout
+  price: 0
+  storage:
+    back:
+    - BoxMagazinePistol
+
+- type: loadout
+  id: RogueLightRifleMagLoadout
+  price: 50
+  storage:
+    back:
+    - BoxMagazineLightRifle
