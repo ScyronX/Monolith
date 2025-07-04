@@ -272,7 +272,7 @@
   description: uplink-security-flyssa-voucher-desc
   productEntity: ShipVoucherFlyssa
   cost:
-    FederationMilitaryCredit: 750
+    FederationMilitaryCredit: 2500
   categories:
   - UplinkSecurityVouchers
   conditions:
