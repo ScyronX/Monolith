@@ -1,0 +1,67 @@
+- type: constructionGraph
+  id: BottleBomb
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: empty
+      steps:
+      - tag: DrinkCan
+        name: an empty can
+        icon:
+          sprite: Objects/Consumable/Drinks/cola.rsi
+          state: icon_open
+        doAfter: 1
+  - node: empty
+    entity: BottleBombEmpty
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: DrinkColaCanEmpty
+      - !type:DeleteEntity {}
+      steps:
+      - tool: Prying
+        doAfter: 1
+    - to: fuel
+      conditions:
+      - !type:MinSolution
+        solution: drink
+        reagent:
+          ReagentId: WeldingFuel
+        quantity: 15
+      steps:
+      - tool: Screwing
+        doAfter: 1
+  - node: fuel
+    entity: BottleBombFuel
+    edges:
+    - to: empty
+      conditions:
+      - !type:SolutionEmpty
+        solution: drink
+      steps:
+      - tool: Screwing
+        doAfter: 1
+    - to: firebomb
+      conditions:
+      - !type:MinSolution
+        solution: drink
+        reagent:
+          ReagentId: WeldingFuel
+        quantity: 15
+      steps:
+      - material: Cloth
+        amount: 1
+        doAfter: 2
+  - node: bottlebomb
+    entity: BottleBomb
+    edges:
+    - to: fuel
+      completed:
+      - !type:SpawnPrototype
+        prototype: MaterialCloth1
+        amount: 1
+      steps:
+      - tool: Cutting
+        doAfter: 2

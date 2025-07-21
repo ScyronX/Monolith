@@ -1,0 +1,98 @@
+- type: entity
+  parent: [BaseItem]
+  id: BottleBomb
+  name: bottle bomb
+  description: Cheap alternative to nukes.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/ied.rsi
+    layers:
+    - state: base
+      map: ["enum.TriggerVisualLayers.Base"]
+    - state: fuel
+    - state: wires
+  - type: Item
+    sprite: Objects/Consumable/Drinks/cola.rsi
+  - type: OnUseTimerTrigger
+    delay: 3
+    examinable: false
+    initialBeepDelay: 0
+    beepSound:
+      path: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+      params:
+        volume: 1
+  - type: Explosive
+    explosionType: FireBomb
+    totalIntensity: 25
+    intensitySlope: 5
+    maxIntensity: 3
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger
+  - type: Appearance
+  - type: AnimationPlayer
+  - type: TimerTriggerVisuals
+    unprimedSprite: base
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:ExplodeBehavior
+  - type: Construction
+    graph: BottleBomb
+    node: bottlebomb
+
+- type: entity
+  parent: [DrinkColaCanEmptye]
+  id: BottleBombEmpty
+  name: bottle bomb
+  suffix: empty
+  description: Cheap alternative to nukes. This one has no fuel.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Bombs/ied.rsi
+    layers:
+    - state: base
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "base"}
+          False: {state: "base"}
+  - type: Construction
+    graph: BottleBomb
+    node: empty
+    defaultTarget: bottleomb
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  parent: [BottleBombEmpty]
+  id: BottleBombFuel
+  suffix: fuel
+  description: Cheap alternative to nukes. This one is missing cloth.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: fuel
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 15
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 15
+  - type: Construction
+    node: fuel
+    defaultTarget: bottlebomb
+  - type: Tag
+    tags: []

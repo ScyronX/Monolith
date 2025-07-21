@@ -1,0 +1,25 @@
+- type: construction
+  name: bottle bomb
+  id: bottlebomb
+  graph: BottleBomb
+  startNode: start
+  targetNode: bottlebomb
+  category: construction-category-weapons
+  objectType: Item
+  description: Cheap alternative to nukes.
+  icon:
+    sprite: Objects/Weapons/Bombs/ied.rsi
+    state: icon
+
+#- type: construction
+#  name: nail bomb
+#  id: nailbomb
+#  graph: NailBomb
+#  startNode: start
+#  targetNode: nailbomb
+#  category: construction-category-weapons
+#  objectType: Item
+#  description: An improvised explosive made from nails and gunpowder.
+#  icon:
+#    sprite: Objects/Weapons/Bombs/pipebomb.rsi
+#    state: icon
