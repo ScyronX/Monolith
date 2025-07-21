@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 Redrover1760
+# SPDX-FileCopyrightText: 2025 starch
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Wearables
 - type: listing
   id: UplinkHardsuitSyndieMedic
@@ -7,9 +12,9 @@
   productEntity: ClothingBackpackDuffelSyndicateMedicHardsuitBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
-    Telecrystal: 4
+    Telecrystal: 30
   cost:
-    Telecrystal: 8
+    Telecrystal: 50
   categories:
   - UplinkWearables
 
@@ -21,9 +26,9 @@
   productEntity: UplinkImplanter
   discountCategory: usualDiscounts
   discountDownTo:
-    Telecrystal: 1
+    Telecrystal: 5
   cost:
-    Telecrystal: 2
+    Telecrystal: 10
   categories:
   - UplinkImplants
   conditions:
@@ -35,3 +40,45 @@
       blacklist:
         components:
           - SurplusBundle
+
+- type: listing # Syndicate Money
+  id: UplinkCash10000
+  name: uplink-Cash10000-name
+  description: uplink-Cash10000-desc
+  productEntity: SpaceCash10000
+  icon: { sprite: Objects/Economy/cash.rsi, state: cash_1000000 }
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkDeception
+  conditions:
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+
+- type: listing # Syndicate Money
+  id: UplinkCash100000
+  name: uplink-Cash100000-name
+  description: uplink-Cash100000-desc
+  productEntity: SpaceCash100000
+  icon: { sprite: _NF/Objects/Economy/cash.rsi, state: cash_100000 }
+  cost:
+    Telecrystal: 50
+  categories:
+  - UplinkDeception
+  conditions:
+    - !type:BuyerWhitelistCondition
+      blacklist:
+        components:
+          - SurplusBundle
+
+- type: listing
+  id: UplinkLetoferolSyringe
+  name: uplink-letoferol-name
+  description: uplink-letoferol-desc
+  productEntity: SyringeLetoferol
+  cost:
+    Telecrystal: 350
+  categories:
+  - UplinkDeception

@@ -1,8 +1,15 @@
+// SPDX-FileCopyrightText: 2025 Ark
+// SPDX-FileCopyrightText: 2025 Redrover1760
+// SPDX-FileCopyrightText: 2025 RikuTheKiller
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Shared.Interaction;
 using Content.Server.Shuttles.Components;
 using Content.Shared.Projectiles;
 using Robust.Server.GameObjects;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Mono.Projectiles.TargetSeeking;
 
@@ -14,6 +21,7 @@ public sealed class TargetSeekingSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = null!;
     [Dependency] private readonly RotateToFaceSystem _rotateToFace = null!;
     [Dependency] private readonly PhysicsSystem _physics = null!;
+    [Dependency] private readonly IGameTiming _gameTiming = default!; // Mono
 
     public override void Initialize()
     {
@@ -65,6 +73,8 @@ public sealed class TargetSeekingSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        var curTime = _gameTiming.CurTime;
+
         var query = EntityQueryEnumerator<TargetSeekingComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var seekingComp, out var xform))
         {
@@ -90,6 +100,12 @@ public sealed class TargetSeekingSystem : EntitySystem
             // Skip seeking behavior if disabled (e.g., after entering an enemy grid)
             if (seekingComp.SeekingDisabled)
                 continue;
+
+            if (seekingComp.TrackDelay > 0f)
+            {
+                seekingComp.TrackDelay -= frameTime;
+                continue;
+            }
 
             // If we have a target, track it using the selected algorithm
             if (seekingComp.CurrentTarget.HasValue)
@@ -138,7 +154,7 @@ public sealed class TargetSeekingSystem : EntitySystem
 
             // Check if target is within field of view
             var angleDifference = Angle.ShortestDistance(currentRotation, angleToTarget).Degrees;
-            if (MathF.Abs((float)angleDifference) > component.FieldOfView / 2)
+            if (MathF.Abs((float)angleDifference) > component.ScanArc / 2)
             {
                 continue; // Target is outside our field of view
             }
@@ -227,7 +243,7 @@ public sealed class TargetSeekingSystem : EntitySystem
             uid,
             targetAngle,
             frameTime,
-            comp.ScanArc,
+            comp.Tolerance,
             comp.TurnRate?.Theta ?? MathF.PI * 2,
             xform
         );
@@ -258,7 +274,7 @@ public sealed class TargetSeekingSystem : EntitySystem
             uid,
             angleToTarget,
             frameTime,
-            comp.ScanArc,
+            comp.Tolerance,
             comp.TurnRate?.Theta ?? MathF.PI * 2,
             xform
         );

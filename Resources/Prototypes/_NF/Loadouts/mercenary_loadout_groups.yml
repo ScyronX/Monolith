@@ -1,3 +1,18 @@
+# SPDX-FileCopyrightText: 2024 Checkraze
+# SPDX-FileCopyrightText: 2024 Dvir
+# SPDX-FileCopyrightText: 2024 ErhardSteinhauer
+# SPDX-FileCopyrightText: 2024 Hamblinius
+# SPDX-FileCopyrightText: 2024 Maxtone
+# SPDX-FileCopyrightText: 2024 steinhauer.erhard
+# SPDX-FileCopyrightText: 2025 Bonaout
+# SPDX-FileCopyrightText: 2025 Daniel Lenrd
+# SPDX-FileCopyrightText: 2025 UnicornOnLSD
+# SPDX-FileCopyrightText: 2025 Whatstone
+# SPDX-FileCopyrightText: 2025 core-mene
+# SPDX-FileCopyrightText: 2025 starch
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: loadoutGroup
   id: MercenaryJumpsuit
   name: loadout-group-contractor-jumpsuit
@@ -12,7 +27,9 @@
   - MercenaryClothingUniformJumpsuitMilitaryTurtleneckBlueMercenary
   - MercenaryClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryMedic
   - MercenaryClothingUniformJumpsuitMilitaryTurtleneckBlueMercenaryCaptain
+  - MercenaryClothingUniformJumpsitDrakeIndustriesWatchdog
   subgroups:
+  - MonoMercenaryJumpsuit # Mono
   - PilotJumpsuit
   - ContractorJumpsuit
   fallbacks:
@@ -31,6 +48,7 @@
   - SecuritySatchel
   - SecurityDuffel
   subgroups:
+  - MonoMercenaryBackpack # Mono
   - PilotBackpack
   - ContractorBackpack
   fallbacks:
@@ -49,6 +67,7 @@
   - MercenaryClothingOuterArmorPunkRandomized # Punkish (Randomized visuals)
   - MercenaryClothingOuterArmorCaptainCarapace
   subgroups:
+  - MonoMercenaryOuterClothing # Mono
   - PilotOuterClothing
   - ContractorOuterClothing
 
@@ -106,6 +125,7 @@
   - MercenaryClothingHandsMercenaryGlovesCombat
   - MercenaryClothingHandsGlovesCombat
   subgroups:
+  - MonoMercenaryGloves # Mono
   - PilotGloves
   - ContractorGloves
 
@@ -128,6 +148,7 @@
   - MercenaryClothingEyesGlassesMercenary
   - MercenaryClothingEyesGlassesSunglasses
   subgroups:
+  - MonoMercenaryBallisticGoggles # Mono
   - PilotGlasses
   - ContractorGlasses
 
@@ -137,6 +158,7 @@
   loadouts:
   - MercenaryClothingMaskGasMercenary
   - MercenaryClothingMaskGasSecurity
+  - MercenaryClothingMaskDrakeIndustriesWatchdog
   subgroups:
   - PilotFace
   - ContractorFace
@@ -153,4 +175,5 @@
   - MercenaryClothingBeltMilitaryWebbingMed
   - MercenaryClothingBeltSecurity
   subgroups:
+  - MonoMercenaryChestrig # Mono
   - ContractorBelt

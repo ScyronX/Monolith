@@ -1,3 +1,19 @@
+# SPDX-FileCopyrightText: 2023 Alexander Evgrashin
+# SPDX-FileCopyrightText: 2023 Banshee
+# SPDX-FileCopyrightText: 2023 Cheackraze
+# SPDX-FileCopyrightText: 2023 RealIHaveANameOfficial
+# SPDX-FileCopyrightText: 2024 Checkraze
+# SPDX-FileCopyrightText: 2024 Dvir
+# SPDX-FileCopyrightText: 2024 ErhardSteinhauer
+# SPDX-FileCopyrightText: 2024 Salvantrix
+# SPDX-FileCopyrightText: 2024 dustylens
+# SPDX-FileCopyrightText: 2025 Alkheemist
+# SPDX-FileCopyrightText: 2025 RikuTheKiller
+# SPDX-FileCopyrightText: 2025 Whatstone
+# SPDX-FileCopyrightText: 2025 starch
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 meta:
   format: 7
   category: Grid
@@ -1728,7 +1744,7 @@ entities:
       powerLoad: 5
     - type: Battery
       startingCharge: 0
-- proto: ComputerWallmountAdvancedRadar
+- proto: ComputerWallmountRadar
   entities:
   - uid: 535
     components:
@@ -2498,17 +2514,13 @@ entities:
     - type: Transform
       pos: -10.5,5.5
       parent: 1
-- proto: GunneryServer
+- proto: GunneryServerMedium
   entities:
   - uid: 331
     components:
     - type: Transform
       pos: -3.5,9.5
       parent: 1
-    - type: ApcPowerReceiver
-      powerLoad: 5
-    - type: Battery
-      startingCharge: 0
 - proto: GyroscopeNfsd
   entities:
   - uid: 332
@@ -2736,7 +2748,7 @@ entities:
     - type: Transform
       pos: -1.5,5.5
       parent: 1
-- proto: SuitStorageNfsdCombat
+- proto: SuitStorageDeputy
   entities:
   - uid: 365
     components:
