@@ -1,10 +1,10 @@
 - type: constructionGraph
-  id: BottleBomb
+  id: PyrogelBomb
   start: start
   graph:
   - node: start
     edges:
-    - to: bottlebombempty
+    - to: pyrogelbombempty
       steps:
       - tag: DrinkBottle
         name: an empty bottle
@@ -13,20 +13,17 @@
           state: icon
         doAfter: 1
 
-  - node: bottlebombempty
-    entity: BottleBombEmpty
+  - node: pyrogelbombempty
+    entity: PyrogelBombEmpty
     edges:
-    - to: bottlebomb
-      conditions:
-      - !type:MinSolution
-        solution: drink
-        reagent:
-          ReagentId: WeldingFuel
-        quantity: 15
+    - to: pyrogelbomb
       steps:
+      - material: Pyrogel
+        amount: 1
+        doAfter: 2
       - material: Cloth
         amount: 1
         doAfter: 2
 
-  - node: bottlebomb
-    entity: BottleBomb
+  - node: pyrogelbomb
+    entity: PyrogelBomb

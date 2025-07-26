@@ -5,7 +5,7 @@
   description: An improvised explosive made from nails and gunpowder.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Bombs/pipebomb.rsi
+    sprite: _Mono/Objects/Weapons/Bombs/nailbomb.rsi
     layers:
     - state: base
       map: ["enum.TriggerVisualLayers.Base"]
@@ -30,3 +30,36 @@
     capacity: 30
   - type: Appearance
   - type: TimerTriggerVisuals
+  - type: Construction
+    graph: NailBomb
+    node: nailbomb
+
+- type: entity
+  parent: [BaseItem]
+  id: NailBombGunpowder
+  name: nail bomb
+  description: An improvised explosive made from nails and gunpowder. This one has no gunpowder.
+  suffix: Gunpowder
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Bombs/nailbomb.rsi
+    state: base
+  - type: Construction
+    graph: NailBomb
+    node: gunpowder
+    defaultTarget: pipebomb
+
+- type: entity
+  parent: BaseItem
+  id: NailBombCable
+  name: nail bomb
+  description: An improvised explosive made from nails and gunpowder.
+  suffix: Cable
+  components:
+  - type: Sprite
+    sprite: _Mono/Objects/Weapons/Bombs/nailbomb.rsi
+    state: base
+  - type: Construction
+    graph: NailBomb
+    node: cable
+    defaultTarget: nailbomb
